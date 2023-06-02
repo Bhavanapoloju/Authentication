@@ -84,10 +84,10 @@ app.post("/login", async (request, response) => {
             databaseUser.password
         );
         if (isPasswordMatched === true) {
-            response.send("Login Success")
+            response.send("Login Success");
         } else{
             response.status(400);
-            response.send("Invalid Password")
+            response.send("Invalid Password");
         }
     }
 }); 
@@ -114,7 +114,7 @@ app.put("/change-password", async (request, response) {
                 UPDATE 
                   user 
                 SET 
-                   password = '${hashedPassword}
+                   password = '${hashedPassword}'
                 WHERE 
                     username = '${username}';`; 
             
@@ -123,12 +123,12 @@ app.put("/change-password", async (request, response) {
             } 
             else{
                 response.status(400);
-                response.send("Password is too short")
+                response.send("Password is too short");
             }
         } 
         else {
-            response.status(400) 
-            response.send("Invalid current password")
+            response.status(400) ;
+            response.send("Invalid current password");
         }
     }
 }); 
